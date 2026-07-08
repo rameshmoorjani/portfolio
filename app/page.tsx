@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContactForm } from "./components/contact-form";
 
 export default function Home() {
   const navItems = [
@@ -6,8 +7,9 @@ export default function Home() {
     { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
     { label: "Education", href: "#education" },
-    { label: "Blogs", href: "#blogs" },
     { label: "Projects", href: "#projects" },
+    { label: "Blogs", href: "#blogs" },
+    { label: "Achievements", href: "#achievements" },
     { label: "Contact", href: "#contact" },
   ];
   const experiences = [
@@ -18,7 +20,7 @@ export default function Home() {
     },
     {
       period: "Jul 2018 - Apr 2024",
-      role: "Software Engineer (Premium) -> Technical Lead Contributor",
+      role: "Software Engineer (Premium) → Technical Lead Contributor",
       company: "IntraEdge Inc (Client: American Express), Phoenix, AZ",
     },
     {
@@ -26,69 +28,138 @@ export default function Home() {
       role: "Sr. Java Developer / Technology Architect",
       company: "Vantage ERP LLC (Client: JB Hunt), Houston, TX",
     },
+    {
+      period: "Aug 2010 - Oct 2017",
+      role: "Technology Lead",
+      company: "Infosys Limited, Chandigarh, India",
+    },
+    {
+      period: "Dec 2007 - Aug 2010",
+      role: "Sr. Software Engineer",
+      company: "Nucleus Software Export Limited, Noida, India",
+    },
+    {
+      period: "May 2007 - Nov 2007",
+      role: "Java Developer",
+      company: "Impetus Infotech (India) Pvt. Ltd., Noida, India",
+    },
+    {
+      period: "Apr 2005 - May 2007",
+      role: "Senior Consultant",
+      company: "Natural Technologies Pvt. Ltd., Jaipur, India",
+    },
   ];
   const skills = [
     { name: "Java", mark: "J" },
     { name: "Kotlin", mark: "KT" },
     { name: "Golang", mark: "GO" },
     { name: "TypeScript", mark: "TS" },
+    { name: "JavaScript", mark: "JS" },
+    { name: "Python", mark: "PY" },
     { name: "Node.js", mark: "ND" },
     { name: "React", mark: "R" },
+    { name: "Angular", mark: "NG" },
     { name: "Spring Boot", mark: "SB" },
     { name: "GraphQL", mark: "GQ" },
+    { name: "REST APIs", mark: "REST" },
     { name: "AWS", mark: "AWS" },
+    { name: "Lambda", mark: "λ" },
+    { name: "Step Functions", mark: "SF" },
     { name: "Kafka", mark: "KF" },
     { name: "Docker", mark: "DK" },
     { name: "Kubernetes", mark: "K8" },
     { name: "MongoDB", mark: "MG" },
+    { name: "Couchbase", mark: "CB" },
+    { name: "Oracle", mark: "ORA" },
+    { name: "TensorFlow", mark: "TF" },
+    { name: "FastAPI", mark: "FA" },
   ];
   const education = [
-    "Post Graduate Program in Cloud Computing - Great Learning (UT Austin)",
-    "Supervised Machine Learning: Regression and Classification - DeepLearning.AI (Stanford)",
+    "Post Graduate Program in Cloud Computing - Great Learning (University of Texas Austin)",
+    "Supervised Machine Learning: Regression and Classification - DeepLearning.AI & Stanford University",
+    "Advanced Learning Algorithms - DeepLearning.AI & Stanford University",
+    "Building Scalable Microservices with TypeScript and Node.js - LinkedIn Learning",
+    "AI Coding Agents with GitHub Copilot and Cursor - LinkedIn Learning",
+    "Java Memory Management (Garbage Collection, JVM Tuning) - LinkedIn Learning",
+    "Java Exception Handling - LinkedIn Learning",
     "Oracle 9i Certification - SQL STAR International",
     "Microsoft Exam 70-480: Programming in HTML5 with JavaScript and CSS3",
+    "IBM WebSphere Portal 7.0 Solution Development (LOT-915)",
+    "IBM WebSphere Portal 6.1 Deployment and Administration (LOT-955)",
   ];
   const projects = [
     {
       title: "Vehicle Classification using KITTI + TensorFlow",
-      summary: "Trained a CNN model for vehicle type classification and served real-time inference with FastAPI.",
+      summary: "Trained a CNN model to classify vehicle types using the KITTI dataset. Deployed a REST API with FastAPI for real-time image inference and model serving.",
       stack: "Python, TensorFlow, FastAPI, Computer Vision",
     },
     {
-      title: "Tolling Web App",
-      summary: "Built a map-driven tolling interface with secure auth and payment integration.",
+      title: "Tolling Web App (React + MapLibre + AWS)",
+      summary: "Developed a React frontend with MapLibre GL for map-based tolling interface. Integrated Stripe for payment processing; hosted via AWS Amplify and Cognito for authentication.",
       stack: "React, MapLibre, Stripe, AWS Amplify, Cognito",
     },
     {
       title: "FastAPI Chatbot with Feedback Loop",
-      summary: "Developed a conversational AI service with iterative prompt tuning and response validation pipeline.",
+      summary: "Built a conversational AI chatbot using FastAPI and prompt engineering. Implemented user feedback loop for dynamic prompt tuning and response validation.",
       stack: "FastAPI, Prompt Engineering, Python",
+    },
+    {
+      title: "Mortgage Rate Notifier",
+      summary: "Built a conversational AI chatbot using FastAPI and prompt engineering. Implemented user feedback loop for dynamic prompt tuning and response validation.",
+      stack: "FastAPI, AI/ML, Python",
     },
   ];
   const blogs = [
     {
-      title: "Architecting Event-Driven Systems in AWS",
-      excerpt: "Practical lessons from shipping serverless workflows using Lambda, Step Functions, and EventBridge.",
+      title: "Thread vs. Coroutine: A Comparative Analysis",
+      excerpt: "Dive into concurrency models—comparing threads and coroutines. Learn when to use threads for CPU-bound tasks and when coroutines excel for I/O-bound operations.",
+      link: "https://medium.com/@rameshmoorjani/thread-vs-coroutine-a-comparative-analysis-a1ecc0f0df8d",
     },
     {
-      title: "From Full Stack to AI-Enabled Engineering",
-      excerpt: "How to blend product engineering fundamentals with modern AI tooling without sacrificing quality.",
+      title: "Custom vs. Prebuilt Models in Deep Learning: When to Build, When to Borrow",
+      excerpt: "Practical insights on choosing between custom and prebuilt architectures. Learn when to leverage proven models like ResNet and when to build from scratch.",
+      link: "https://medium.com/@rameshmoorjani/custom-vs-prebuilt-models-in-deep-learning-when-to-build-when-to-borrow-eed5f44bc6ec",
+    },
+  ];
+  const achievements = [
+    {
+      id: "verra-best-team",
+      award: "Best Team Award",
+      company: "Verra Mobility",
+      description: "Recognized for exceptional teamwork and contributions to the engineering team.",
+    },
+    {
+      id: "nucleus-best-team",
+      award: "Best Team Award",
+      company: "Nucleus Software Export Limited",
+      description: "Honored for outstanding collaboration and peer appreciation in the organization.",
+    },
+    {
+      id: "peer-recognition",
+      award: "Peer Recognition & Leadership Kudos",
+      company: "Throughout Career",
+      description: "Consistently received maximum appreciation and recognition in business meetings and team evaluations.",
     },
   ];
   const profileSnippet = `const developer = {
   name: "Ramesh Moorjani",
   role: "Staff-Level Full-Stack Engineer",
-  stack: [
-    "Java", "Kotlin", "Golang",
-    "Node.js", "React", "TypeScript",
-    "GraphQL", "Kafka", "AWS"
-  ],
+  yearsOfExperience: 18,
+  stack: {
+    languages: ["Java", "Kotlin", "Golang", "TypeScript", "Python"],
+    frontend: ["React", "Angular"],
+    backend: ["Node.js", "Spring Boot", "GraphQL"],
+    cloud: ["AWS", "Lambda", "Step Functions"],
+    data: ["MongoDB", "Couchbase", "Kafka"]
+  },
+  expertise: ["Event-Driven Microservices", "Cloud Architecture", "Technical Leadership"],
   qualities: {
     ownership: true,
-    problemSolver: true,
-    teamPlayer: true
+    architect: true,
+    mentor: true,
+    innovator: true
   },
-  availableFor: "Interesting product challenges"
+  availableFor: "Impactful engineering and AI automation challenges"
 };`;
 
   return (
@@ -117,11 +188,10 @@ export default function Home() {
           <p className="eyebrow">Hello,</p>
           <h1 className="hero-title">
             This is <span className="text-pink">Ramesh Moorjani</span>, a
-            <span className="block text-mint">Senior Software Developer</span>
+            <span className="block text-mint">Staff-Level Full-Stack Engineer</span>
           </h1>
           <p className="hero-summary">
-            Staff-level engineer with 18+ years delivering secure, scalable, event-driven platforms across finance, mobility,
-            and logistics using Java, Kotlin, Golang, Node.js, React, and AWS.
+            Innovative and results-oriented engineer with 18+ years of experience building enterprise-grade platforms across finance, mobility, and logistics. Expert in Java, Kotlin, Golang, Node.js, React, and AWS with a passion for architecting scalable microservices and bridging full-stack engineering with AI.
           </p>
 
           <div className="social-strip" aria-label="Social links">
@@ -158,10 +228,7 @@ export default function Home() {
           <div id="about" className="about-card">
             <p className="about-label">Who I Am?</p>
             <p className="about-copy">
-              My name is Ramesh Moorjani. I am a professional and enthusiastic engineer in my daily work, with a quick-learning
-              and self-driven attitude. I enjoy exploring new technologies, solving complex problems, and building scalable web
-              platforms with modern stacks. My core strength is full-stack and backend engineering with strong architecture
-              ownership, and I am always open to impactful opportunities where I can contribute and mentor teams.
+              I am Ramesh Moorjani, a pragmatic and innovative engineer recognized for driving architectural decisions and mentoring engineering teams at scale. With 18+ years in full-stack and backend engineering, I specialize in designing secure, event-driven microservices and leading cloud-native transformations. I thrive on solving complex problems, exploring emerging technologies, and delivering production-ready solutions. My expertise spans enterprise platforms in finance, mobility, and logistics. I'm passionate about bridging full-stack engineering with AI/ML to create future-ready platforms.
             </p>
           </div>
 
@@ -283,9 +350,28 @@ export default function Home() {
             <article key={blog.title} className="content-card portfolio-reveal">
               <h3>{blog.title}</h3>
               <p>{blog.excerpt}</p>
-              <a href="#top" className="text-link">
-                Read more
+              <a href={blog.link || "#top"} className="text-link" target="_blank" rel="noreferrer">
+                Read on Medium
               </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="achievements" className="content-section">
+        <div className="section-header portfolio-reveal">
+          <h2 className="section-title">Achievements & Awards</h2>
+          <p className="section-subtitle">Recognition from peers and organizations for outstanding contributions.</p>
+        </div>
+        <div className="card-grid single-column">
+          {achievements.map((achievement) => (
+            <article key={achievement.id} className="content-card portfolio-reveal">
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
+                <span style={{ fontSize: "24px" }} aria-hidden="true">🏆</span>
+                <h3 style={{ margin: 0 }}>{achievement.award}</h3>
+              </div>
+              <p style={{ color: "#a3a3a3", fontSize: "14px", margin: "4px 0 8px 0" }}>{achievement.company}</p>
+              <p>{achievement.description}</p>
             </article>
           ))}
         </div>
@@ -300,20 +386,7 @@ export default function Home() {
               consulting collaborations.
             </p>
 
-            <form className="contact-form">
-              <label htmlFor="name">Your Name:</label>
-              <input id="name" name="name" type="text" />
-
-              <label htmlFor="email">Your Email:</label>
-              <input id="email" name="email" type="email" />
-
-              <label htmlFor="message">Your Message:</label>
-              <textarea id="message" name="message" rows={5} />
-
-              <button type="button" className="btn-solid contact-submit">
-                Send Message
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
           <div className="contact-info-card portfolio-reveal" style={{ animationDelay: "120ms" }}>
